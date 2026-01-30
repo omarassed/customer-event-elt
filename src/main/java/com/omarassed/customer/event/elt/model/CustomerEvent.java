@@ -13,7 +13,7 @@ import java.time.Instant;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CustomerEvent {
-    @NotBlank
+
     private String eventId;
     @NotBlank
     private String customerId;

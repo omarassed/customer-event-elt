@@ -8,6 +8,7 @@ import software.amazon.awssdk.services.s3.model.PutObjectRequest;
 import tools.jackson.databind.ObjectMapper;
 
 import java.util.Map;
+import java.util.UUID;
 
 @Service
 public class S3Service {
@@ -20,10 +21,16 @@ public class S3Service {
     }
 
     public void uploadEvent(CustomerEvent event) throws Exception {
+
+        event.setEventId(UUID.randomUUID().toString());
+
+        String key = "raw-interactions/" + event.getEventId() + ".json";
+
         String json = objectMapper.writeValueAsString(event);
+
         s3Client.putObject(PutObjectRequest.builder()
                         .bucket("customer-event-elt-raw-dev-omarassed")
-                        .key("raw-interactions/" + event.getEventId() + ".json")
+                        .key(key)
                         .contentType("application/json")
                         .metadata(Map.of(
                                 "eventType", event.getInteractionType(),
