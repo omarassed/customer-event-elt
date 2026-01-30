@@ -1,0 +1,4 @@
+aws:
+  s3:
+    bucket: customer-event-elt-raw-dev-omarassed
+    region: us-east-1
