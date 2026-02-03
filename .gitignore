@@ -1,6 +1,6 @@
-HELP.md
+ingestion/HELP.md
 target/
-.mvn/wrapper/maven-wrapper.jar
+ingestion/.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
