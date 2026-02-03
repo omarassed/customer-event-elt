@@ -35,12 +35,14 @@ build/
 orchestration/venv/
 
 # Python bytecode
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
 
-# Airflow local files
-airflow.db
-airflow-webserver.pid
-logs/
+# Airflow local files (Relative to root)
+**/orchestration/airflow.db
+**/orchestration/airflow.cfg
+**/orchestration/airflow-webserver.pid
+**/orchestration/logs/
+**/orchestration/unittests.cfg
