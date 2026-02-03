@@ -33,3 +33,14 @@ build/
 .vscode/
 
 orchestration/venv/
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Airflow local files
+airflow.db
+airflow-webserver.pid
+logs/
